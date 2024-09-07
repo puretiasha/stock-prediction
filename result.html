@@ -1,0 +1,94 @@
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ company_name }} Stock Analysis</title>
+    <style>
+        body {
+            background-image: url('static/stockimage2.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Make the body relative to position the link absolutely within it */
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+        }
+        .bottom-right {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+        .bottom-right a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .bottom-right a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        ul li {
+            margin: 10px 0;
+        }
+        .company-link {
+            display: block;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .company-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ company_name }} Stock Analysis</h1>
+        
+        <p><strong>Average Closing Price:</strong> {{ result['average_closing_price'] }}</p>
+        
+        <h2>Sentiment Distribution</h2>
+        <ul>
+            <li><strong>Positive:</strong> {{ result['positive_percentage'] }}%</li>
+            <li><strong>Negative:</strong> {{ result['negative_percentage'] }}%</li>
+            <li><strong>Neutral:</strong> {{ result['neutral_percentage'] }}%</li>
+        </ul>
+
+        <h2>Company Information</h2>
+        <a class="company-link" href="https://en.wikipedia.org/wiki/{{company_name}}" target="_blank">
+            For clear info of {{ company_name }}
+        </a>
+    </div>
+    <div class="bottom-right">
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>

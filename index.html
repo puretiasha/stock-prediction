@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis</title>
+    <style>
+        body {
+            background-image: url('static/stockimage.jpeg'); /* Replace with your background image */
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .top-right {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .top-right a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .top-right a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label, input {
+            display: block;
+            margin: 10px auto;
+            font-size: 1.2em;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-right">
+        <a href="https://www.google.com" target="_blank">Other Page</a>
+    </div>
+    <div class="container">
+        <h1>Stock Analysis     </h1>
+        <form action="/process" method="post">
+            <label for="company_name">Company Name:</label>
+            <input type="text" id="company_name" name="company_name" required>
+            <label for="start_date">Start Date (YYYY-MM-DD):</label>
+            <input type="date" id="start_date" name="start_date" required>
+            <label for="end_date">End Date (YYYY-MM-DD):</label>
+            <input type="date" id="end_date" name="end_date" required>
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
+</body>
+</html>
